@@ -1,0 +1,87 @@
+$color: red;
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-size: 12px;
+	line-height: 1.7;
+}
+
+li{
+	list-style: none;
+}
+
+#content{
+	width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+#content h1{
+	color: $color;
+}
+
+#content .item{
+	padding: 20px;
+	margin-bottom: 20px;
+	border: 1px dotted $color;
+}
+
+#content .item h2{
+	font-size: 16px;
+	font-weight: bold;
+	border-bottom: 5px solid $color;
+	margin-bottom: 10px;
+}
+
+#content .item li{
+	display: inline;
+	margin-right: 10px;
+	text-align:justify;
+}
+
+#content .item li a img{
+	width: 230px;
+	height: 230px;
+	margin-bottom: 10px;
+	border: none;
+}
+
+#menu{
+	position: fixed;
+	top: 100px;
+	left: 50%;
+	margin-left: 400+10px;
+	width: 100px;
+}
+
+#menu ul li a{
+	display: block;
+	margin: 5px 0;
+	font-size: 14px;
+	font-weight: bold;
+	color: #333;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-decoration: none;
+	text-align: center;
+	border-radius: 3px;
+}
+#menu ul li a:hover, #menu ul li a.current{
+	color: white;
+	background: $color;
+}
+
+// ie6 hack
+* html, * html body {
+	background-image: url(about:blank);
+	background-attachment: fixed;
+}
+* html #menu{
+	// position: fixed;
+	position: absolute;
+	top: expression(((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+ 100 +'px');
+}
