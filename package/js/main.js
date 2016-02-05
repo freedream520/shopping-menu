@@ -23,4 +23,36 @@ $(document).ready(function(){
 			menu.find("[href='"+ currentId +"']").addClass('current');
 		}
 	});
+
+	// 滚动条
+	var goTop = $('.goTop');
+
+	$('.goTop').on('click', move);
+		// 调用函数是函数无参数
+		// $(window).on('scroll', checkPosition);
+		$(window).on('scroll', function() {
+			// $(window).height() 是屏幕的一屏可视区域
+			checkPosition($(window).height());
+		});
+		
+		// 加载的时候判断
+		checkPosition($(window).height());
+		// 运动返回顶部
+		function move() {
+			$('html, body').animate({
+				scrollTop: 0
+			},800);
+		}
+		// 返回顶部
+		function goTop() {
+			$('html, body').scrollTop(0);
+		}
+		function checkPosition(pos) {
+			// $(window).scrollTop()判断当前浏览器的高度
+			if($(window).scrollTop() > pos) {
+				$('.goTop').fadeIn();
+			} else {
+				$('.goTop').fadeOut();
+			}
+		}
 });

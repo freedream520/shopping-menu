@@ -75,6 +75,23 @@ li {
   background: red;
 }
 
+.goTop {
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  margin-left: 410px;
+  line-height: 1.2em;
+  border: 1px solid red;
+  width: 40px;
+  height: 34px;
+  text-align: center;
+  padding-top: 6px;
+  border-radius: 5px;
+  color: red;
+  text-decoration: none;
+}
+
 * html, * html body {
   background-image: url(about:blank);
   background-attachment: fixed;
